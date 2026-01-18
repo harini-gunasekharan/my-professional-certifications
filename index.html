@@ -14,6 +14,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #FFB6D9 0%, #A8D5E2 25%, #D4F1C5 50%, #E0BBE4 75%, #FFB6D9 100%);
+            background-attachment: fixed;
             min-height: 100vh;
             padding: 20px;
         }
@@ -21,54 +22,83 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.15);
             overflow: hidden;
+            backdrop-filter: blur(10px);
         }
 
         header {
-            background: linear-gradient(135deg, #FFB6D9 0%, #A8D5E2 25%, #D4F1C5 50%, #E0BBE4 75%, #FFB6D9 100%);
+            background: linear-gradient(135deg, #FFB6D9 0%, #E0BBE4 50%, #A8D5E2 100%);
             color: white;
-            padding: 60px 40px;
+            padding: 80px 40px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-30px, -30px) rotate(180deg); }
         }
 
         header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+            font-weight: 700;
+            letter-spacing: -1px;
         }
 
         header p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
         }
 
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 40px;
-            background: #f8f9fa;
+            gap: 25px;
+            padding: 50px;
+            background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
         }
 
         .stat-card {
             background: white;
-            padding: 30px;
-            border-radius: 15px;
+            padding: 35px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
         }
 
         .stat-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(255, 182, 217, 0.3);
+            border-color: #FFB6D9;
         }
 
         .stat-number {
-            font-size: 3em;
-            font-weight: bold;
+            font-size: 3.5em;
+            font-weight: 800;
             background: linear-gradient(135deg, #FFB6D9, #A8D5E2, #D4F1C5, #E0BBE4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -79,144 +109,267 @@
         .stat-label {
             color: #666;
             font-size: 1.1em;
+            font-weight: 500;
         }
 
         .content {
-            padding: 40px;
+            padding: 50px;
         }
 
         .section {
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .section-title {
-            font-size: 2em;
+            font-size: 2.2em;
             color: #333;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #FFB6D9;
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 4px solid transparent;
+            border-image: linear-gradient(90deg, #FFB6D9, #A8D5E2, #D4F1C5, #E0BBE4) 1;
             display: flex;
             align-items: center;
             gap: 15px;
+            font-weight: 700;
         }
 
         .section-icon {
-            font-size: 1.2em;
+            font-size: 1.3em;
         }
 
         .cert-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
         }
 
         .cert-card {
             background: white;
-            border: 2px solid #e0e0e0;
-            border-radius: 15px;
-            padding: 25px;
-            transition: all 0.3s ease;
+            border: 2px solid #f0f0f0;
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #FFB6D9, #A8D5E2, #D4F1C5, #E0BBE4);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .cert-card:hover::before {
+            transform: scaleX(1);
         }
 
         .cert-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 182, 217, 0.3);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(255, 182, 217, 0.25);
             border-color: #FFB6D9;
         }
 
         .cert-provider {
-            font-size: 0.9em;
+            font-size: 0.95em;
             color: #FF88B7;
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .cert-name {
-            font-size: 1.2em;
-            font-weight: bold;
+            font-size: 1.25em;
+            font-weight: 700;
             color: #333;
-            margin-bottom: 10px;
-            line-height: 1.4;
+            margin-bottom: 12px;
+            line-height: 1.5;
         }
 
         .cert-date {
-            color: #666;
+            color: #888;
             font-size: 0.9em;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-weight: 500;
         }
 
         .cert-details {
-            color: #888;
-            font-size: 0.85em;
-            line-height: 1.6;
+            color: #999;
+            font-size: 0.9em;
+            line-height: 1.7;
         }
 
         .badge {
             display: inline-block;
-            padding: 5px 12px;
+            padding: 6px 16px;
             background: linear-gradient(135deg, #FFB6D9, #E0BBE4);
             color: white;
-            border-radius: 20px;
-            font-size: 0.75em;
-            margin-top: 10px;
+            border-radius: 25px;
+            font-size: 0.8em;
+            margin-top: 12px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(255, 182, 217, 0.3);
+        }
+
+        .view-cert-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #FFB6D9, #E0BBE4);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 182, 217, 0.4);
+        }
+
+        .view-cert-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 182, 217, 0.6);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 15px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: translateY(-50%) scale(0.8); }
+            to { transform: translateY(-50%) scale(1); }
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #fff;
+            font-size: 50px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .close:hover {
+            color: #FFB6D9;
+            transform: rotate(90deg);
+        }
+
+        .modal-placeholder {
+            text-align: center;
+            color: white;
+            padding: 100px;
+            font-size: 1.5em;
         }
 
         footer {
-            background: #2c3e50;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
             color: white;
-            padding: 30px 40px;
+            padding: 40px 50px;
             text-align: center;
         }
 
         .social-links {
-            margin-top: 20px;
+            margin-top: 25px;
             display: flex;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .social-link {
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 12px 25px;
             background: rgba(255,255,255,0.1);
-            border-radius: 25px;
-            transition: background 0.3s ease;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
         }
 
         .social-link:hover {
             background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.2);
         }
 
         .filter-buttons {
             display: flex;
             gap: 15px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .filter-btn {
-            padding: 10px 20px;
+            padding: 12px 28px;
             border: 2px solid #FFB6D9;
             background: white;
             color: #FF88B7;
-            border-radius: 25px;
+            border-radius: 30px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 1em;
+            font-weight: 600;
         }
 
-        .filter-btn:hover, .filter-btn.active {
+        .filter-btn:hover {
             background: linear-gradient(135deg, #FFB6D9, #E0BBE4);
             color: white;
             border-color: #FFB6D9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 182, 217, 0.4);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #FFB6D9, #E0BBE4);
+            color: white;
+            border-color: #FFB6D9;
+            box-shadow: 0 5px 15px rgba(255, 182, 217, 0.4);
         }
 
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2em;
+                font-size: 2.5em;
             }
 
             .cert-grid {
@@ -225,6 +378,10 @@
 
             .stats {
                 grid-template-columns: 1fr;
+            }
+
+            .content {
+                padding: 30px 20px;
             }
         }
     </style>
@@ -277,6 +434,7 @@
                         <div class="cert-date">📅 October 30, 2025</div>
                         <div class="cert-details">Recognition for organizing and conducting the bootcamp at Er. Perumal Manimekalai College of Engineering</div>
                         <span class="badge">Leadership</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/iit-bombay-illuminate-coordinator.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 2. IIT Bombay - Illuminate Workshop - Participation -->
@@ -286,14 +444,16 @@
                         <div class="cert-date">📅 October 30, 2025</div>
                         <div class="cert-details">Successfully completed the bootcamp at Er. Perumal Manimekalai College of Engineering</div>
                         <span class="badge">Entrepreneurship</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/iit-bombay-illuminate-participant.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 3. IIT Bombay - NEC -->
                     <div class="cert-card" data-category="entrepreneur">
                         <div class="cert-provider">IIT Bombay E-Cell</div>
                         <div class="cert-name">National Entrepreneurship Challenge</div>
-                        <div class="cert-date">Score: 83 | 2025</div>
+                        <div class="cert-date">College Rank: 83 | 2025</div>
                         <span class="badge">Competition</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/iit-bombay-nec.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 4. AWS - Essentials of Prompt Engineering -->
@@ -302,6 +462,7 @@
                         <div class="cert-name">Essentials of Prompt Engineering</div>
                         <div class="cert-date">📅 December 29, 2025</div>
                         <span class="badge">Prompt Engineering</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/aws-prompt-essentials.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 5. AWS - Foundations of Prompt Engineering -->
@@ -310,6 +471,7 @@
                         <div class="cert-name">Foundations of Prompt Engineering</div>
                         <div class="cert-date">📅 December 29, 2025</div>
                         <span class="badge">Prompt Engineering</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/aws-prompt-foundations.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 6. AWS - Introduction to Generative AI -->
@@ -318,6 +480,7 @@
                         <div class="cert-name">Introduction to Generative AI - Art of the Possible</div>
                         <div class="cert-date">📅 December 29, 2025</div>
                         <span class="badge">Generative AI</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/aws-genai.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 7. AWS - Job Roles in the Cloud -->
@@ -326,6 +489,7 @@
                         <div class="cert-name">Job Roles in the Cloud</div>
                         <div class="cert-date">📅 December 29, 2025</div>
                         <span class="badge">AWS</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/aws-job-roles.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 8. AWS - Introduction to Machine Learning -->
@@ -334,6 +498,7 @@
                         <div class="cert-name">Introduction to Machine Learning: Art of the Possible</div>
                         <div class="cert-date">📅 December 29, 2025</div>
                         <span class="badge">Machine Learning</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/aws-ml.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 9. CodeSignal - Understanding LLMs -->
@@ -343,6 +508,7 @@
                         <div class="cert-date">📅 December 31, 2025</div>
                         <div class="cert-details">Part of "Prompt Engineering for Everyone" learning path</div>
                         <span class="badge">Prompt Engineering</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/codesignal-llm-basics.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 10. AWS - Billing & Cost Management -->
@@ -351,6 +517,7 @@
                         <div class="cert-name">AWS Billing and Cost Management</div>
                         <div class="cert-date">📅 January 2, 2026</div>
                         <span class="badge">AWS</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/aws-billing.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 11. CodeSignal - Engineering Output Size with LLMs -->
@@ -360,6 +527,7 @@
                         <div class="cert-date">📅 January 4, 2026</div>
                         <div class="cert-details">Part of "Prompt Engineering for Everyone" learning path</div>
                         <span class="badge">Prompt Engineering</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/codesignal-output-size.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 12. CodeSignal - HTML -->
@@ -369,6 +537,7 @@
                         <div class="cert-date">📅 January 6, 2026</div>
                         <div class="cert-details">Part of "Introduction to Web Development" learning path</div>
                         <span class="badge">HTML</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/codesignal-html.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 13. CodeSignal - CSS -->
@@ -378,6 +547,7 @@
                         <div class="cert-date">📅 January 6, 2026</div>
                         <div class="cert-details">Part of "Introduction to Web Development" learning path</div>
                         <span class="badge">CSS</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/codesignal-css.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 14. CodeSignal - JavaScript Interactive -->
@@ -387,6 +557,7 @@
                         <div class="cert-date">📅 January 8, 2026</div>
                         <div class="cert-details">Part of "Introduction to Web Development" learning path</div>
                         <span class="badge">JavaScript</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/codesignal-js-interactive.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 15. CodeSignal - JavaScript and DOM -->
@@ -396,6 +567,7 @@
                         <div class="cert-date">📅 January 8, 2026</div>
                         <div class="cert-details">Part of "Introduction to Web Development" learning path</div>
                         <span class="badge">JavaScript</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/codesignal-js-dom.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 16. CodeSignal - HTTP & APIs -->
@@ -405,6 +577,7 @@
                         <div class="cert-date">📅 January 9, 2026</div>
                         <div class="cert-details">Part of "Introduction to Web Development" learning path</div>
                         <span class="badge">APIs</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/codesignal-http-apis.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 17. CodeSignal - Web Development Complete -->
@@ -414,6 +587,7 @@
                         <div class="cert-date">📅 January 9, 2026</div>
                         <div class="cert-details">HTML, CSS, JavaScript Programming and DOM API</div>
                         <span class="badge">Full Stack</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/codesignal-web-dev-complete.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 18. CodeSignal - Format Control -->
@@ -423,6 +597,7 @@
                         <div class="cert-date">📅 January 11, 2026</div>
                         <div class="cert-details">Task Analysis and Outcome Definition</div>
                         <span class="badge">Prompt Engineering</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/codesignal-format-control.pdf')">View Certificate</button>
                     </div>
 
                     <!-- 19. CodeSignal - Precise Text Modification -->
@@ -432,6 +607,7 @@
                         <div class="cert-date">📅 January 17, 2026</div>
                         <div class="cert-details">Prompt Testing and Iteration - Part of "Prompt Engineering for Everyone" learning path</div>
                         <span class="badge">Prompt Engineering</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/codesignal-precise-text.pdf')">View Certificate</button>
                     </div>
                 </div>
             </div>
@@ -444,8 +620,17 @@
                 <a href="#" class="social-link">LinkedIn</a>
                 <a href="#" class="social-link">Email</a>
             </div>
-            <p style="margin-top: 20px; opacity: 0.8; font-size: 0.9em;">Last Updated: January 17, 2026</p>
+            <p style="margin-top: 25px; opacity: 0.8; font-size: 0.95em;">Last Updated: January 17, 2026</p>
         </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="certModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <div class="modal-placeholder" id="modalContent">
+            <p>📜 Certificate Image Will Display Here</p>
+            <p style="font-size: 0.8em; margin-top: 20px; opacity: 0.7;">Upload your certificate images to display them</p>
+        </div>
     </div>
 
     <script>
@@ -469,14 +654,42 @@
             });
         }
 
+        function openCertificate(pdfPath) {
+            const modal = document.getElementById('certModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            // Display PDF in modal using iframe
+            modalContent.innerHTML = `
+                <iframe src="${pdfPath}" 
+                        style="width: 90vw; height: 90vh; border: none; border-radius: 15px; background: white;">
+                </iframe>
+                <p style="font-size: 0.8em; margin-top: 10px; opacity: 0.7;">
+                    If PDF doesn't display, <a href="${pdfPath}" target="_blank" style="color: #FFB6D9; text-decoration: underline;">click here to open in new tab</a>
+                </p>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('certModal').style.display = 'none';
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
         // Add smooth scroll animation on load
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.cert-card');
             cards.forEach((card, index) => {
                 card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
+                card.style.transform = 'translateY(30px)';
                 setTimeout(() => {
-                    card.style.transition = 'all 0.5s ease';
+                    card.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
                     card.style.opacity = '1';
                     card.style.transform = 'translateY(0)';
                 }, index * 50);
