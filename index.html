@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FFB6D9 0%, #A8D5E2 25%, #D4F1C5 50%, #E0BBE4 75%, #FFB6D9 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -28,7 +28,7 @@
         }
 
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FFB6D9 0%, #A8D5E2 25%, #D4F1C5 50%, #E0BBE4 75%, #FFB6D9 100%);
             color: white;
             padding: 60px 40px;
             text-align: center;
@@ -69,7 +69,10 @@
         .stat-number {
             font-size: 3em;
             font-weight: bold;
-            color: #667eea;
+            background: linear-gradient(135deg, #FFB6D9, #A8D5E2, #D4F1C5, #E0BBE4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 10px;
         }
 
@@ -91,7 +94,7 @@
             color: #333;
             margin-bottom: 30px;
             padding-bottom: 15px;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 3px solid #FFB6D9;
             display: flex;
             align-items: center;
             gap: 15px;
@@ -119,13 +122,13 @@
 
         .cert-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(255, 182, 217, 0.3);
+            border-color: #FFB6D9;
         }
 
         .cert-provider {
             font-size: 0.9em;
-            color: #667eea;
+            color: #FF88B7;
             font-weight: bold;
             margin-bottom: 10px;
         }
@@ -153,7 +156,7 @@
         .badge {
             display: inline-block;
             padding: 5px 12px;
-            background: #667eea;
+            background: linear-gradient(135deg, #FFB6D9, #E0BBE4);
             color: white;
             border-radius: 20px;
             font-size: 0.75em;
@@ -196,9 +199,9 @@
 
         .filter-btn {
             padding: 10px 20px;
-            border: 2px solid #667eea;
+            border: 2px solid #FFB6D9;
             background: white;
-            color: #667eea;
+            color: #FF88B7;
             border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -206,8 +209,9 @@
         }
 
         .filter-btn:hover, .filter-btn.active {
-            background: #667eea;
+            background: linear-gradient(135deg, #FFB6D9, #E0BBE4);
             color: white;
+            border-color: #FFB6D9;
         }
 
         @media (max-width: 768px) {
@@ -234,11 +238,11 @@
 
         <div class="stats">
             <div class="stat-card">
-                <div class="stat-number">18</div>
+                <div class="stat-number">19</div>
                 <div class="stat-label">Total Certificates</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">7</div>
+                <div class="stat-number">8</div>
                 <div class="stat-label">AI/ML & Prompt Eng.</div>
             </div>
             <div class="stat-card">
@@ -262,148 +266,11 @@
 
             <div class="section">
                 <h2 class="section-title">
-                    <span class="section-icon">🤖</span>
-                    Artificial Intelligence & Machine Learning
+                    <span class="section-icon">📚</span>
+                    All Certifications
                 </h2>
                 <div class="cert-grid">
-                    <div class="cert-card" data-category="ai">
-                        <div class="cert-provider">CodeSignal</div>
-                        <div class="cert-name">Engineering Output Size with LLMs</div>
-                        <div class="cert-date">📅 January 4, 2026</div>
-                        <div class="cert-details">Part of "Prompt Engineering for Everyone" learning path</div>
-                        <span class="badge">Prompt Engineering</span>
-                    </div>
-
-                    <div class="cert-card" data-category="ai">
-                        <div class="cert-provider">CodeSignal</div>
-                        <div class="cert-name">Journey Into Format Control in Prompt Engineering</div>
-                        <div class="cert-date">📅 January 11, 2026</div>
-                        <div class="cert-details">Task Analysis and Outcome Definition</div>
-                        <span class="badge">Prompt Engineering</span>
-                    </div>
-
-                    <div class="cert-card" data-category="ai">
-                        <div class="cert-provider">CodeSignal</div>
-                        <div class="cert-name">Understanding LLMs and Basic Prompting Techniques</div>
-                        <div class="cert-date">📅 December 31, 2025</div>
-                        <div class="cert-details">Part of "Prompt Engineering for Everyone" learning path</div>
-                        <span class="badge">Prompt Engineering</span>
-                    </div>
-
-                    <div class="cert-card" data-category="ai">
-                        <div class="cert-provider">AWS Training & Certification</div>
-                        <div class="cert-name">Introduction to Generative AI - Art of the Possible</div>
-                        <div class="cert-date">📅 December 29, 2025</div>
-                        <span class="badge">Generative AI</span>
-                    </div>
-
-                    <div class="cert-card" data-category="ai">
-                        <div class="cert-provider">AWS Training & Certification</div>
-                        <div class="cert-name">Introduction to Machine Learning: Art of the Possible</div>
-                        <div class="cert-date">📅 December 29, 2025</div>
-                        <span class="badge">Machine Learning</span>
-                    </div>
-
-                    <div class="cert-card" data-category="ai">
-                        <div class="cert-provider">AWS Training & Certification</div>
-                        <div class="cert-name">Foundations of Prompt Engineering</div>
-                        <div class="cert-date">📅 December 29, 2025</div>
-                        <span class="badge">Prompt Engineering</span>
-                    </div>
-
-                    <div class="cert-card" data-category="ai">
-                        <div class="cert-provider">AWS Training & Certification</div>
-                        <div class="cert-name">Essentials of Prompt Engineering</div>
-                        <div class="cert-date">📅 December 29, 2025</div>
-                        <span class="badge">Prompt Engineering</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">
-                    <span class="section-icon">☁️</span>
-                    Cloud Computing
-                </h2>
-                <div class="cert-grid">
-                    <div class="cert-card" data-category="cloud">
-                        <div class="cert-provider">AWS Training & Certification</div>
-                        <div class="cert-name">AWS Billing and Cost Management</div>
-                        <div class="cert-date">📅 January 2, 2026</div>
-                        <span class="badge">AWS</span>
-                    </div>
-
-                    <div class="cert-card" data-category="cloud">
-                        <div class="cert-provider">AWS Training & Certification</div>
-                        <div class="cert-name">Job Roles in the Cloud</div>
-                        <div class="cert-date">📅 December 29, 2025</div>
-                        <span class="badge">AWS</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">
-                    <span class="section-icon">💻</span>
-                    Web Development
-                </h2>
-                <div class="cert-grid">
-                    <div class="cert-card" data-category="web">
-                        <div class="cert-provider">CodeSignal</div>
-                        <div class="cert-name">HTML: The Structure of the Web</div>
-                        <div class="cert-date">📅 January 6, 2026</div>
-                        <div class="cert-details">Part of "Introduction to Web Development" learning path</div>
-                        <span class="badge">HTML</span>
-                    </div>
-
-                    <div class="cert-card" data-category="web">
-                        <div class="cert-provider">CodeSignal</div>
-                        <div class="cert-name">CSS: Styling the Web</div>
-                        <div class="cert-date">📅 January 6, 2026</div>
-                        <div class="cert-details">Part of "Introduction to Web Development" learning path</div>
-                        <span class="badge">CSS</span>
-                    </div>
-
-                    <div class="cert-card" data-category="web">
-                        <div class="cert-provider">CodeSignal</div>
-                        <div class="cert-name">JavaScript: Making Web Pages Interactive</div>
-                        <div class="cert-date">📅 January 8, 2026</div>
-                        <div class="cert-details">Part of "Introduction to Web Development" learning path</div>
-                        <span class="badge">JavaScript</span>
-                    </div>
-
-                    <div class="cert-card" data-category="web">
-                        <div class="cert-provider">CodeSignal</div>
-                        <div class="cert-name">JavaScript and the DOM: Connecting Code to Web Pages</div>
-                        <div class="cert-date">📅 January 8, 2026</div>
-                        <div class="cert-details">Part of "Introduction to Web Development" learning path</div>
-                        <span class="badge">JavaScript</span>
-                    </div>
-
-                    <div class="cert-card" data-category="web">
-                        <div class="cert-provider">CodeSignal</div>
-                        <div class="cert-name">How the Web Works: HTTP & APIs</div>
-                        <div class="cert-date">📅 January 9, 2026</div>
-                        <div class="cert-details">Part of "Introduction to Web Development" learning path</div>
-                        <span class="badge">APIs</span>
-                    </div>
-
-                    <div class="cert-card" data-category="web">
-                        <div class="cert-provider">CodeSignal</div>
-                        <div class="cert-name">Introduction to Web Development - Complete Path</div>
-                        <div class="cert-date">📅 January 9, 2026</div>
-                        <div class="cert-details">HTML, CSS, JavaScript Programming and DOM API</div>
-                        <span class="badge">Full Stack</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">
-                    <span class="section-icon">🚀</span>
-                    Entrepreneurship & Leadership
-                </h2>
-                <div class="cert-grid">
+                    <!-- 1. IIT Bombay - Illuminate Workshop - Coordinating Team -->
                     <div class="cert-card" data-category="entrepreneur">
                         <div class="cert-provider">IIT Bombay E-Cell</div>
                         <div class="cert-name">Illuminate Entrepreneurship Bootcamp - Coordinating Team</div>
@@ -412,6 +279,7 @@
                         <span class="badge">Leadership</span>
                     </div>
 
+                    <!-- 2. IIT Bombay - Illuminate Workshop - Participation -->
                     <div class="cert-card" data-category="entrepreneur">
                         <div class="cert-provider">IIT Bombay E-Cell</div>
                         <div class="cert-name">Illuminate Entrepreneurship Bootcamp - Participant</div>
@@ -420,11 +288,150 @@
                         <span class="badge">Entrepreneurship</span>
                     </div>
 
+                    <!-- 3. IIT Bombay - NEC -->
                     <div class="cert-card" data-category="entrepreneur">
                         <div class="cert-provider">IIT Bombay E-Cell</div>
                         <div class="cert-name">National Entrepreneurship Challenge</div>
-                        <div class="cert-date">Score: 83</div>
+                        <div class="cert-date">Score: 83 | 2025</div>
                         <span class="badge">Competition</span>
+                    </div>
+
+                    <!-- 4. AWS - Essentials of Prompt Engineering -->
+                    <div class="cert-card" data-category="ai">
+                        <div class="cert-provider">AWS Training & Certification</div>
+                        <div class="cert-name">Essentials of Prompt Engineering</div>
+                        <div class="cert-date">📅 December 29, 2025</div>
+                        <span class="badge">Prompt Engineering</span>
+                    </div>
+
+                    <!-- 5. AWS - Foundations of Prompt Engineering -->
+                    <div class="cert-card" data-category="ai">
+                        <div class="cert-provider">AWS Training & Certification</div>
+                        <div class="cert-name">Foundations of Prompt Engineering</div>
+                        <div class="cert-date">📅 December 29, 2025</div>
+                        <span class="badge">Prompt Engineering</span>
+                    </div>
+
+                    <!-- 6. AWS - Introduction to Generative AI -->
+                    <div class="cert-card" data-category="ai">
+                        <div class="cert-provider">AWS Training & Certification</div>
+                        <div class="cert-name">Introduction to Generative AI - Art of the Possible</div>
+                        <div class="cert-date">📅 December 29, 2025</div>
+                        <span class="badge">Generative AI</span>
+                    </div>
+
+                    <!-- 7. AWS - Job Roles in the Cloud -->
+                    <div class="cert-card" data-category="cloud">
+                        <div class="cert-provider">AWS Training & Certification</div>
+                        <div class="cert-name">Job Roles in the Cloud</div>
+                        <div class="cert-date">📅 December 29, 2025</div>
+                        <span class="badge">AWS</span>
+                    </div>
+
+                    <!-- 8. AWS - Introduction to Machine Learning -->
+                    <div class="cert-card" data-category="ai">
+                        <div class="cert-provider">AWS Training & Certification</div>
+                        <div class="cert-name">Introduction to Machine Learning: Art of the Possible</div>
+                        <div class="cert-date">📅 December 29, 2025</div>
+                        <span class="badge">Machine Learning</span>
+                    </div>
+
+                    <!-- 9. CodeSignal - Understanding LLMs -->
+                    <div class="cert-card" data-category="ai">
+                        <div class="cert-provider">CodeSignal</div>
+                        <div class="cert-name">Understanding LLMs and Basic Prompting Techniques</div>
+                        <div class="cert-date">📅 December 31, 2025</div>
+                        <div class="cert-details">Part of "Prompt Engineering for Everyone" learning path</div>
+                        <span class="badge">Prompt Engineering</span>
+                    </div>
+
+                    <!-- 10. AWS - Billing & Cost Management -->
+                    <div class="cert-card" data-category="cloud">
+                        <div class="cert-provider">AWS Training & Certification</div>
+                        <div class="cert-name">AWS Billing and Cost Management</div>
+                        <div class="cert-date">📅 January 2, 2026</div>
+                        <span class="badge">AWS</span>
+                    </div>
+
+                    <!-- 11. CodeSignal - Engineering Output Size with LLMs -->
+                    <div class="cert-card" data-category="ai">
+                        <div class="cert-provider">CodeSignal</div>
+                        <div class="cert-name">Engineering Output Size with LLMs</div>
+                        <div class="cert-date">📅 January 4, 2026</div>
+                        <div class="cert-details">Part of "Prompt Engineering for Everyone" learning path</div>
+                        <span class="badge">Prompt Engineering</span>
+                    </div>
+
+                    <!-- 12. CodeSignal - HTML -->
+                    <div class="cert-card" data-category="web">
+                        <div class="cert-provider">CodeSignal</div>
+                        <div class="cert-name">HTML: The Structure of the Web</div>
+                        <div class="cert-date">📅 January 6, 2026</div>
+                        <div class="cert-details">Part of "Introduction to Web Development" learning path</div>
+                        <span class="badge">HTML</span>
+                    </div>
+
+                    <!-- 13. CodeSignal - CSS -->
+                    <div class="cert-card" data-category="web">
+                        <div class="cert-provider">CodeSignal</div>
+                        <div class="cert-name">CSS: Styling the Web</div>
+                        <div class="cert-date">📅 January 6, 2026</div>
+                        <div class="cert-details">Part of "Introduction to Web Development" learning path</div>
+                        <span class="badge">CSS</span>
+                    </div>
+
+                    <!-- 14. CodeSignal - JavaScript Interactive -->
+                    <div class="cert-card" data-category="web">
+                        <div class="cert-provider">CodeSignal</div>
+                        <div class="cert-name">JavaScript: Making Web Pages Interactive</div>
+                        <div class="cert-date">📅 January 8, 2026</div>
+                        <div class="cert-details">Part of "Introduction to Web Development" learning path</div>
+                        <span class="badge">JavaScript</span>
+                    </div>
+
+                    <!-- 15. CodeSignal - JavaScript and DOM -->
+                    <div class="cert-card" data-category="web">
+                        <div class="cert-provider">CodeSignal</div>
+                        <div class="cert-name">JavaScript and the DOM: Connecting Code to Web Pages</div>
+                        <div class="cert-date">📅 January 8, 2026</div>
+                        <div class="cert-details">Part of "Introduction to Web Development" learning path</div>
+                        <span class="badge">JavaScript</span>
+                    </div>
+
+                    <!-- 16. CodeSignal - HTTP & APIs -->
+                    <div class="cert-card" data-category="web">
+                        <div class="cert-provider">CodeSignal</div>
+                        <div class="cert-name">How the Web Works: HTTP & APIs</div>
+                        <div class="cert-date">📅 January 9, 2026</div>
+                        <div class="cert-details">Part of "Introduction to Web Development" learning path</div>
+                        <span class="badge">APIs</span>
+                    </div>
+
+                    <!-- 17. CodeSignal - Web Development Complete -->
+                    <div class="cert-card" data-category="web">
+                        <div class="cert-provider">CodeSignal</div>
+                        <div class="cert-name">Introduction to Web Development - Complete Path</div>
+                        <div class="cert-date">📅 January 9, 2026</div>
+                        <div class="cert-details">HTML, CSS, JavaScript Programming and DOM API</div>
+                        <span class="badge">Full Stack</span>
+                    </div>
+
+                    <!-- 18. CodeSignal - Format Control -->
+                    <div class="cert-card" data-category="ai">
+                        <div class="cert-provider">CodeSignal</div>
+                        <div class="cert-name">Journey Into Format Control in Prompt Engineering</div>
+                        <div class="cert-date">📅 January 11, 2026</div>
+                        <div class="cert-details">Task Analysis and Outcome Definition</div>
+                        <span class="badge">Prompt Engineering</span>
+                    </div>
+
+                    <!-- 19. CodeSignal - Precise Text Modification -->
+                    <div class="cert-card" data-category="ai">
+                        <div class="cert-provider">CodeSignal</div>
+                        <div class="cert-name">Prompt Engineering for Precise Text Modification</div>
+                        <div class="cert-date">📅 January 17, 2026</div>
+                        <div class="cert-details">Prompt Testing and Iteration - Part of "Prompt Engineering for Everyone" learning path</div>
+                        <span class="badge">Prompt Engineering</span>
                     </div>
                 </div>
             </div>
@@ -437,7 +444,7 @@
                 <a href="#" class="social-link">LinkedIn</a>
                 <a href="#" class="social-link">Email</a>
             </div>
-            <p style="margin-top: 20px; opacity: 0.8; font-size: 0.9em;">Last Updated: January 14, 2026</p>
+            <p style="margin-top: 20px; opacity: 0.8; font-size: 0.9em;">Last Updated: January 17, 2026</p>
         </footer>
     </div>
 
