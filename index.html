@@ -41,18 +41,74 @@
         header::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: float 15s infinite ease-in-out;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-30px, -30px) rotate(180deg); }
+        @keyframes snowfall {
+            0% {
+                top: -10%;
+                opacity: 1;
+            }
+            100% {
+                top: 110%;
+                opacity: 0.3;
+            }
         }
+
+        @keyframes snowfall2 {
+            0% {
+                top: -10%;
+                opacity: 1;
+            }
+            100% {
+                top: 110%;
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes snowfall3 {
+            0% {
+                top: -10%;
+                opacity: 0.8;
+            }
+            100% {
+                top: 110%;
+                opacity: 0.2;
+            }
+        }
+
+        header .snowflake {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+            animation: snowfall linear infinite;
+        }
+
+        header .snowflake:nth-child(1) { left: 5%; font-size: 14px; animation-duration: 12s; animation-delay: 0s; }
+        header .snowflake:nth-child(2) { left: 15%; font-size: 22px; animation-duration: 15s; animation-delay: 2s; }
+        header .snowflake:nth-child(3) { left: 25%; font-size: 18px; animation-duration: 13s; animation-delay: 4s; }
+        header .snowflake:nth-child(4) { left: 35%; font-size: 16px; animation-duration: 14s; animation-delay: 1s; }
+        header .snowflake:nth-child(5) { left: 45%; font-size: 20px; animation-duration: 16s; animation-delay: 3s; }
+        header .snowflake:nth-child(6) { left: 55%; font-size: 24px; animation-duration: 11s; animation-delay: 5s; }
+        header .snowflake:nth-child(7) { left: 65%; font-size: 15px; animation-duration: 17s; animation-delay: 2s; }
+        header .snowflake:nth-child(8) { left: 75%; font-size: 19px; animation-duration: 13s; animation-delay: 0s; }
+        header .snowflake:nth-child(9) { left: 85%; font-size: 21px; animation-duration: 14s; animation-delay: 4s; }
+        header .snowflake:nth-child(10) { left: 95%; font-size: 17px; animation-duration: 15s; animation-delay: 1s; }
+        header .snowflake:nth-child(11) { left: 10%; font-size: 23px; animation-duration: 12s; animation-delay: 3s; }
+        header .snowflake:nth-child(12) { left: 20%; font-size: 16px; animation-duration: 16s; animation-delay: 5s; }
+        header .snowflake:nth-child(13) { left: 30%; font-size: 20px; animation-duration: 11s; animation-delay: 2s; }
+        header .snowflake:nth-child(14) { left: 40%; font-size: 18px; animation-duration: 14s; animation-delay: 0s; }
+        header .snowflake:nth-child(15) { left: 50%; font-size: 22px; animation-duration: 13s; animation-delay: 4s; }
+        header .snowflake:nth-child(16) { left: 60%; font-size: 15px; animation-duration: 17s; animation-delay: 1s; }
+        header .snowflake:nth-child(17) { left: 70%; font-size: 19px; animation-duration: 12s; animation-delay: 3s; }
+        header .snowflake:nth-child(18) { left: 80%; font-size: 21px; animation-duration: 15s; animation-delay: 5s; }
+        header .snowflake:nth-child(19) { left: 90%; font-size: 17px; animation-duration: 16s; animation-delay: 2s; }
+        header .snowflake:nth-child(20) { left: 8%; font-size: 24px; animation-duration: 14s; animation-delay: 0s; }
 
         header h1 {
             font-size: 3.5em;
@@ -389,13 +445,33 @@
 <body>
     <div class="container">
         <header>
+            <div class="snowflake">❄</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❄</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❄</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❄</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❄</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❄</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❄</div>
+            <div class="snowflake">❅</div>
             <h1>🎓 Harini Gunasekharan</h1>
             <p>Professional Certifications Portfolio</p>
         </header>
 
         <div class="stats">
             <div class="stat-card">
-                <div class="stat-number">21</div>
+                <div class="stat-number">25</div>
                 <div class="stat-label">Total Certificates</div>
             </div>
             <div class="stat-card">
@@ -405,6 +481,14 @@
             <div class="stat-card">
                 <div class="stat-number">6</div>
                 <div class="stat-label">Web Development</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Marketing & SEO</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Entrepreneurship</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">2</div>
@@ -418,6 +502,7 @@
                 <button class="filter-btn" onclick="filterCerts('ai')">AI/ML</button>
                 <button class="filter-btn" onclick="filterCerts('cloud')">Cloud</button>
                 <button class="filter-btn" onclick="filterCerts('web')">Web Dev</button>
+                <button class="filter-btn" onclick="filterCerts('marketing')">Marketing & SEO</button>
                 <button class="filter-btn" onclick="filterCerts('entrepreneur')">Entrepreneurship</button>
             </div>
 
@@ -629,6 +714,46 @@
                         <span class="badge">Complete Path</span>
                         <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/codesignal-prompt-complete.pdf')">View Certificate</button>
                     </div>
+
+                    <!-- 22. CodeSignal - Content Marketing & SEO Ecosystem -->
+                    <div class="cert-card" data-category="marketing">
+                        <div class="cert-provider">CodeSignal</div>
+                        <div class="cert-name">The Content Marketing and SEO Ecosystem</div>
+                        <div class="cert-date">📅 January 20, 2026</div>
+                        <div class="cert-details">Future Forecasting - Part of "Content Marketing and SEO" learning path</div>
+                        <span class="badge">Marketing & SEO</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/codesignal-content-marketing.pdf')">View Certificate</button>
+                    </div>
+
+                    <!-- 23. CodeSignal - Audience Intelligence and Intent Mapping -->
+                    <div class="cert-card" data-category="marketing">
+                        <div class="cert-provider">CodeSignal</div>
+                        <div class="cert-name">Audience Intelligence and Intent Mapping</div>
+                        <div class="cert-date">📅 January 20, 2026</div>
+                        <div class="cert-details">Assessing Needs - Part of "Content Marketing and SEO" learning path</div>
+                        <span class="badge">Marketing & SEO</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/codesignal-audience-intelligence.pdf')">View Certificate</button>
+                    </div>
+
+                    <!-- 24. CodeSignal - Strategic Content Architecture -->
+                    <div class="cert-card" data-category="marketing">
+                        <div class="cert-provider">CodeSignal</div>
+                        <div class="cert-name">Strategic Content Architecture</div>
+                        <div class="cert-date">📅 January 22, 2026</div>
+                        <div class="cert-details">Analytical Thinking - Part of "Content Marketing and SEO" learning path</div>
+                        <span class="badge">Marketing & SEO</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/codesignal-content-architecture.pdf')">View Certificate</button>
+                    </div>
+
+                    <!-- 25. CodeSignal - Writing Search-Optimized Content -->
+                    <div class="cert-card" data-category="marketing">
+                        <div class="cert-provider">CodeSignal</div>
+                        <div class="cert-name">Writing Search-Optimized Content</div>
+                        <div class="cert-date">📅 January 24, 2026</div>
+                        <div class="cert-details">Analytical Thinking - Part of "Content Marketing and SEO" learning path</div>
+                        <span class="badge">Marketing & SEO</span>
+                        <button class="view-cert-btn" onclick="openCertificate('certificates/pdfs/codesignal-search-optimized.pdf')">View Certificate</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -640,7 +765,7 @@
                 <a href="#" class="social-link">LinkedIn</a>
                 <a href="#" class="social-link">Email</a>
             </div>
-            <p style="margin-top: 25px; opacity: 0.8; font-size: 0.95em;">Last Updated: January 18, 2026</p>
+            <p style="margin-top: 25px; opacity: 0.8; font-size: 0.95em;">Last Updated: January 24, 2026</p>
         </footer>
     </div>
 
